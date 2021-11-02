@@ -1,0 +1,9 @@
+@import '/src/styles/theme';
+
+.card {
+  padding: 1.2rem 2rem;
+  border-radius: 10px;
+  min-height: 7.8125rem;
+  border: 3pz solid getColor(primary);
+  background-color: darken(getColor(dark), 2);
+}

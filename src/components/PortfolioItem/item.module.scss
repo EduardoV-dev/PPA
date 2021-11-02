@@ -1,0 +1,52 @@
+@import "/src/styles/breakpoints";
+@import "/src/styles/theme";
+
+.item {
+  width: 100%;
+  max-width: 30rem;
+
+  &__carousel {
+    margin-bottom: 1rem;
+  }
+
+  &__sectionName {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 0.3rem;
+    color: getColor(white);
+  }
+  
+  &__projectDescription {
+    font-style: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    color: getColor(white);
+  }
+
+  &__badgesContainer {
+    padding-top: 0.5rem;
+  }
+
+  &__btnsContainer {
+    margin-top: 1rem;
+
+    @include responsive(sm) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__btn {
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+
+    @include responsive(sm) {
+      margin-bottom: 0;
+    }
+
+    svg {
+      width: 1.125rem;
+      height: 1.125rem;
+    }
+  }
+}

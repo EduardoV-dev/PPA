@@ -1,0 +1,31 @@
+import {
+  BootstrapIcon,
+  CSS3Icon,
+  ElectronIcon,
+  FirebaseBadgeIcon,
+  GitIcon,
+  HTML5Icon,
+  JavaScriptIcon,
+  NextJSIcon,
+  ReactLibraryIcon,
+  ReduxIcon,
+  SassIcon,
+  StrapiIcon,
+  TypeScriptIcon,
+} from "../icons";
+
+export const badgesTechnologies = {
+  html: HTML5Icon,
+  css: CSS3Icon,
+  javascript: JavaScriptIcon,
+  git: GitIcon,
+  sass: SassIcon,
+  bootstrap: BootstrapIcon,
+  react: ReactLibraryIcon,
+  firebase: FirebaseBadgeIcon,
+  redux: ReduxIcon,
+  electron: ElectronIcon,
+  typescript: TypeScriptIcon,
+  strapi: StrapiIcon,
+  next: NextJSIcon,
+};

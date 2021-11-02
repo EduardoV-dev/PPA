@@ -1,0 +1,55 @@
+@import "/src/styles/theme";
+
+.link {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+
+  &:hover,
+  &:focus {
+    background-color: darken(getColor(dark), 2);
+  }
+
+  &-active {
+    background-color: darken(getColor(dark), 2);
+    border-radius: 50px;
+    position: relative;
+    box-shadow: 0 0 0px 2px getColor(purple);
+    width: 95%;
+    margin: 0 auto;
+
+    &::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background-color: getColor(green);
+      border-radius: 50px;
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      animation: ball 1.5s ease infinite alternate;
+
+      @keyframes ball {
+        from {
+          transform: scale(1.4) translate(-50%, -50%); 
+          box-shadow: 0 0 2px 4px getColor(purple);
+        }
+        to {
+          transform: scale(0.8) translate(-50%, -50%);
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  &__text {
+    font-family: "Montserrat", "Raleway", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+    color: getColor(white);
+    margin-left: 0.5rem;
+  }
+}
