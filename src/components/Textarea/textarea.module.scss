@@ -1,0 +1,11 @@
+@import "/src/styles/theme";
+@import "/src/styles/components/input";
+
+.textarea {
+  @extend .inputElement;
+  width: 100%;
+  height: auto;
+  min-height: 120px;
+  max-height: 240px;
+  resize: vertical;
+}

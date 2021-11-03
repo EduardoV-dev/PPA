@@ -1,8 +1,9 @@
 import React from 'react';
+import { ProjectForm } from '../../components';
 
 const Add: React.FC<{}> = (): JSX.Element => {
   return ( 
-    <h1>Add Page</h1>
+    <ProjectForm />
   );
 }
 

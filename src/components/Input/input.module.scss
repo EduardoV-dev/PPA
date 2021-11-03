@@ -1,0 +1,6 @@
+@import "/src/styles/theme";
+@import "/src/styles/components/input";
+
+.input {
+  @extend .inputElement;
+}
