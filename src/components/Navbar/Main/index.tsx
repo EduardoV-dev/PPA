@@ -1,6 +1,7 @@
 import React from 'react';
-import { Logo, Link } from '..';
-import { AddIcon, ListIcon } from '../../icons';
+import Logo from '../Logo';
+import Link from '../Link';
+import { AddIcon, ListIcon } from '../../../icons';
 import styles from './navbar.module.scss';
 import cn from 'classnames';
 

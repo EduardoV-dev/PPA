@@ -2,7 +2,7 @@ import React from 'react';
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
-} from '../../icons';
+} from '../../../icons';
 import useCarousel from './useCarousel';
 import styles from './carousel.module.scss';
 import cn from 'classnames';

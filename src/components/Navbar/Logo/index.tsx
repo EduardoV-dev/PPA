@@ -1,5 +1,5 @@
 import React from 'react';
-import LogoPath from '../../assets/logo.png';
+import LogoPath from '../../../assets/logo.png';
 import styles from './logo.module.scss';
 import cn from 'classnames';
 

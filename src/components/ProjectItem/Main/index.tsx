@@ -1,18 +1,18 @@
 import React from 'react';
-import { IProject } from '../../models/interfaces';
+import { IProject } from '../../../models/interfaces';
 import {
   ChevronRightIcon,
   CodeOpenIcon,
   DeleteIcon,
   EditIcon,
   InfoIcon
-} from '../../icons';
+} from '../../../icons';
 import {
   Button,
   Card,
-  Carousel,
-  BadgesList,
-} from '..';
+} from '../../';
+import Carousel from '../Carousel';
+import BadgesList from '../BadgesList';
 import styles from './item.module.scss';
 import cn from 'classnames';
 

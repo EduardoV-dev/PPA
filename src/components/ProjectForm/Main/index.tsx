@@ -7,13 +7,11 @@ import {
   Label,
   Button
 } from '../..';
-import { AddIcon } from '../../../icons';
-import styles from './projectform.module.scss';
-import cn from 'classnames';
+import ImagesManager from '../ImagesManager';
 import { IProject } from '../../../models/interfaces';
 import { webTechs } from '../../../consts';
-import FileInput from '../FileInput';
-import ImagesManager from '../ImagesManager';
+import styles from './projectform.module.scss';
+import cn from 'classnames';
 
 interface IProjectForm {
   initialState: IProject;
@@ -33,15 +31,11 @@ const ProjectForm: React.FC<IProjectForm> = ({
   const {
     name,
     description,
-    images,
-    technologies,
     urlToProduction,
     urlToSourceCode,
   } = input;
 
   const classNames = cn(styles.form, className);
-
-  console.log(input);
 
   return (
     <form className={classNames}>

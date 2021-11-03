@@ -1,5 +1,5 @@
 import React from 'react';
-import { Backdrop } from '..';
+import Backdrop from '../Backdrop';
 import styles from './modal.module.scss';
 
 interface Props {
