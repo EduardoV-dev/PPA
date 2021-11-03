@@ -6,6 +6,8 @@ interface IInput {
   type: string;
   placeholder: string,
   name: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string | number;
   id?: string;
   className?: string;
 }

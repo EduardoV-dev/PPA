@@ -2,7 +2,10 @@ import React from 'react';
 import { IProject } from '../../models/interfaces';
 import {
   ChevronRightIcon,
-  CodeOpenIcon
+  CodeOpenIcon,
+  DeleteIcon,
+  EditIcon,
+  InfoIcon
 } from '../../icons';
 import {
   Button,
@@ -44,7 +47,7 @@ const Item: React.FC<IItem> = ({
       <h4 className={styles.item__sectionName}>Technologies</h4>
       <BadgesList
         className={styles.item__badgesContainer}
-        technologies={['sass', 'firebase', 'react', 'bootstrap', 'git']}
+        technologies={['SASS', 'Firebase', 'React', 'Bootstrap', 'Git']}
       />
       <div className={styles.item__btnsContainer}>
         <Button
@@ -62,6 +65,26 @@ const Item: React.FC<IItem> = ({
           text="Source code"
           icon={CodeOpenIcon}
         />
+      </div>
+      <div className={styles.item__menu}>
+        <div className={styles.item__head}>
+          <p>Options</p>
+          <InfoIcon className={styles.item__infoBtn} />
+        </div>
+        <div className={styles.item__btnsGroup}>
+          <Button
+            color="info"
+            text="Edit"
+            type="button"
+            icon={EditIcon}
+          />
+          <Button
+            color="warning"
+            text="Delete"
+            type="button"
+            icon={DeleteIcon}
+          />
+        </div>
       </div>
     </Card>
   );

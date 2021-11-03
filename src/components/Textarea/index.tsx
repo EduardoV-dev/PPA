@@ -5,6 +5,8 @@ import cn from 'classnames';
 interface ITextarea {
   placeholder: string,
   name: string;
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  value: string;
   id?: string;
   className?: string;
 }

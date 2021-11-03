@@ -4,6 +4,7 @@
 .item {
   width: 100%;
   max-width: 30rem;
+  position: relative;
 
   &__carousel {
     margin-bottom: 1rem;
@@ -15,8 +16,8 @@
     margin-bottom: 0.3rem;
     color: getColor(white);
   }
-  
-  &__projectDescription {
+
+  &__projectDescriptFion {
     font-style: 1rem;
     margin-bottom: 1rem;
     font-weight: 400;
@@ -47,6 +48,60 @@
     svg {
       width: 1.125rem;
       height: 1.125rem;
+    }
+  }
+
+  &__infoBtn {
+    transform: scale(1.5);
+    transition: all 0.3s ease;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.2);
+    }
+  }
+
+  &__menu {
+    padding: 0.5rem 1rem;
+    position: absolute;
+    top: 3%;
+    right: 4%;
+    z-index: 1;
+    background-color: darken(getColor(dark), 2);
+    border-radius: 10px;
+    clip-path: circle(11.3% at 85% 15%);
+    transition: clip-path 0.3s ease;
+    box-shadow: 0 0 1px 1px getColor(purple);
+
+    &:hover,
+    &:focus {
+      clip-path: circle(100% at 50% 50%);
+    }
+
+    svg {
+      transform: scale(1.5);
+    }
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    p {
+      color: getColor(white);
+      font-size: 1rem;
+      user-select: none;
+    }
+  }
+
+  &__btnsGroup {
+    display: flex;
+    flex-direction: column;
+
+    button:first-child {
+      margin-bottom: 0.5rem;
     }
   }
 }

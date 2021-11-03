@@ -20,6 +20,14 @@
     transform: scale(0.9);
   }
 
+  span {
+    font-size: 1rem;
+    font-family: "Raleway", Helvetica, sans-serif;
+    font-weight: 800;
+    margin-right: 0.5rem;
+    color: getColor(dark);
+  }
+
   &-primary {
     background-color: getColor(primary);
     color: getColor(white);
@@ -51,15 +59,26 @@
     }
   }
 
+  &-warning,
+  &-info {
+    flex-direction: row-reverse;
+    padding: 0.5rem 1rem;
+
+    svg {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &-warning {
+    background-color: getColor(red);
+  }
+
+  &-info {
+    background-color: getColor(lightblue);
+  }
+
   &-link {
     width: 11.25rem;
     text-decoration: none;
-  }
-
-  span {
-    font-size: 1rem;
-    font-family: "Raleway", Helvetica, sans-serif;
-    font-weight: 800;
-    margin-right: 0.5rem;
   }
 }

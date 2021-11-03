@@ -16,3 +16,6 @@ export { default as BootstrapIcon } from './Bootstrap';
 export { default as ElectronIcon } from './Electron';
 export { default as CSS3Icon } from './CSS3';
 export { default as FirebaseBadgeIcon } from './FirebaseBadge';
+export { default as InfoIcon } from './Info';
+export { default as EditIcon } from './Edit';
+export { default as DeleteIcon } from './Delete';

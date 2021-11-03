@@ -14,18 +14,24 @@ import {
   TypeScriptIcon,
 } from "../icons";
 
+export const webTechs = [
+  'HTML5', 'CSS3', 'JavaScript', 'Git', 'SASS',
+  'Bootstrap', 'React', 'Firebase', 'Redux', 'Electron',
+  'TypeScript', 'Strapi', 'Next'
+]
+
 export const badgesTechnologies = {
-  html: HTML5Icon,
-  css: CSS3Icon,
-  javascript: JavaScriptIcon,
-  git: GitIcon,
-  sass: SassIcon,
-  bootstrap: BootstrapIcon,
-  react: ReactLibraryIcon,
-  firebase: FirebaseBadgeIcon,
-  redux: ReduxIcon,
-  electron: ElectronIcon,
-  typescript: TypeScriptIcon,
-  strapi: StrapiIcon,
-  next: NextJSIcon,
+  HTML5: HTML5Icon,
+  CSS3: CSS3Icon,
+  JavaScript: JavaScriptIcon,
+  Git: GitIcon,
+  SASS: SassIcon,
+  Bootstrap: BootstrapIcon,
+  React: ReactLibraryIcon,
+  Firebase: FirebaseBadgeIcon,
+  Redux: ReduxIcon,
+  Electron: ElectronIcon,
+  TypeScript: TypeScriptIcon,
+  Strapi: StrapiIcon,
+  Next: NextJSIcon,
 };

@@ -1,0 +1,33 @@
+@import "/src/styles/theme";
+
+.form {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+
+  &__upper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+  }
+
+  &__lower {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 10% 1fr;
+    align-items: center;
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    position: fixed;
+    bottom: 4%;
+    right: 2%;
+
+    button[type=submit] {
+      margin-left: 1rem;
+    }
+  }
+}

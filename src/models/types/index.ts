@@ -1,6 +1,5 @@
 
-export type Technologies = 'html' | 'css' | 'javascript' |
-  'git' | 'sass' | 'bootstrap' |
-  'react' | 'firebase' | 'redux' |
-  'electron' | 'typescript' | 'strapi' |
-  'next';
+export type Technologies = 'HTML5' | 'CSS3' | 'JavaScript' |
+  'Git' | 'SASS' | 'Bootstrap' | 'React' | 
+  'Firebase' | 'Redux' | 'Electron' | 'TypeScript' | 
+  'Strapi' | 'Next';

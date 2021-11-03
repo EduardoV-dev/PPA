@@ -4,7 +4,9 @@ $colors: (
   green: #47848F,
   purple: #4B21A6,
   primary: #133774,
-  secondary: #5285da
+  secondary: #5285da,
+  red: #FF8F8F,
+  lightblue: #A0C0FF,
 );
 
 @function getColor($color-name) {
