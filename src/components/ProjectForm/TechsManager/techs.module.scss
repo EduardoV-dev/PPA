@@ -1,0 +1,64 @@
+@import "/src/styles/theme";
+@import "/src/styles/components/svg";
+
+.selectContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  select {
+    flex: 1;
+  }
+
+  svg {
+    @extend .svg;
+    flex-basis: 10%;
+    padding: 0.3rem;
+    margin-left: 1.5rem;
+  }
+}
+
+.toggler {
+  display: inline-block;
+  font-size: 0.8rem;
+  user-select: none;
+  color: getColor(white);
+  margin-top: 0.3rem;
+  transition: all 0.3s ease;
+
+  &:hover,
+  &:focus {
+    color: darken(getColor(white), 10);
+    text-decoration: underline;
+  }
+}
+
+div.modal {
+  width: 100%;
+  height: auto;
+  max-width: 30%;
+  min-height: 8rem;
+  top: 100px;
+  left: 64%;
+  background-color: darken(getColor(dark), 2);
+  box-shadow: 0 0 2px 1px getColor(purple);
+  padding: 0 1rem;
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  p {
+    font-size: 1rem;
+    color: getColor(white);
+    user-select: none;
+  }
+
+  span {
+    color: getColor(white);
+    font-size: 2rem;
+    user-select: none;
+  }
+}

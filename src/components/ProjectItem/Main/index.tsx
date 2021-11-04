@@ -10,9 +10,9 @@ import {
 import {
   Button,
   Card,
+  BadgesList
 } from '../../';
 import Carousel from '../Carousel';
-import BadgesList from '../BadgesList';
 import styles from './item.module.scss';
 import cn from 'classnames';
 

@@ -2,16 +2,15 @@ import React, { useState } from 'react';
 import {
   FormControl,
   Input,
-  Select,
   Textarea,
   Label,
   Button
 } from '../..';
 import ImagesManager from '../ImagesManager';
 import { IProject } from '../../../models/interfaces';
-import { webTechs } from '../../../consts';
 import styles from './projectform.module.scss';
 import cn from 'classnames';
+import TechsManager from '../TechsManager';
 
 interface IProjectForm {
   initialState: IProject;
@@ -64,11 +63,8 @@ const ProjectForm: React.FC<IProjectForm> = ({
         <div>
           <FormControl>
             <Label htmlFor="technologies">Technologies</Label>
-            <Select
+            <TechsManager
               onChange={handleOnChange}
-              name="technologies"
-              id="technologies"
-              items={webTechs}
             />
           </FormControl>
           <FormControl>

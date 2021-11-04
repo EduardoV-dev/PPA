@@ -4,18 +4,3 @@
 .select {
   @extend .inputElement;
 }
-
-.toggle {
-  color: getColor(white);
-  font-size: 0.8rem;
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.3s ease;
-  
-  &:hover,
-  &:focus {
-    text-decoration: underline;
-    color: darken(getColor(white), 10);
-    transform: scale(1.1);
-  }
-}

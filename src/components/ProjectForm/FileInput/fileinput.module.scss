@@ -1,4 +1,4 @@
-@import '/src/styles/theme';
+@import '/src/styles/components/svg';
 
 .container {
   &__fileInput {
@@ -6,24 +6,6 @@
   }
 
   &__label {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
-    transform: scale(1.5);
-    border: 3px solid getColor(green);
-    transition: all 0.3s ease;
-
-    &:hover,
-    &:focus {
-      transform: scale(1.2);
-    }
-
-    &:active {
-      transform: scale(1.5);
-      box-shadow: 0 0 2px 4px getColor(purple);
-    }
+    @extend .svg;
   }
 }

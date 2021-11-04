@@ -1,6 +1,6 @@
 import React from 'react';
-import { badgesTechnologies } from '../../../consts';
-import { Technologies } from '../../../models/types';
+import { badgesTechnologies } from '../../consts';
+import { Technologies } from '../../models/types';
 import styles from './badgeslist.module.scss';
 
 interface IBadgesList {

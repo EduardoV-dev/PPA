@@ -1,7 +1,7 @@
 export { default as Layout } from './Layout';
 export { default as Card } from './Card';
+export { default as BadgesList } from './BadgesList';
 export { default as Navbar } from './Navbar/Main';
-export { default as Link } from './Navbar/Link';
 export { default as Button } from './Forms/Button';
 export { default as Input } from './Forms/Input';
 export { default as Label } from './Forms/Label';
@@ -10,5 +10,4 @@ export { default as Textarea } from './Forms/Textarea';
 export { default as FormControl } from './Forms/FormControl';
 export { default as ProjectItem } from './ProjectItem/Main';
 export { default as ProjectForm } from './ProjectForm/Main';
-export { default as Backdrop } from './Modal/Backdrop';
 export { default as Modal } from './Modal/Main';
