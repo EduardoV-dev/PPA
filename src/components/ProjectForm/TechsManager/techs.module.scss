@@ -12,7 +12,7 @@
 
   svg {
     @extend .svg;
-    flex-basis: 10%;
+    flex-basis: 13%;
     padding: 0.3rem;
     margin-left: 1.5rem;
   }
@@ -60,5 +60,10 @@ div.modal {
     color: getColor(white);
     font-size: 2rem;
     user-select: none;
+  }
+
+  &__list {
+    // height: 5rem;
+    // overflow-y: scroll;
   }
 }

@@ -1,14 +1,9 @@
 @import "/src/styles/theme";
+@import "/src/styles/components/button";
 
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  outline: none;
-  border-radius: 50px;
+.btn {
+  @extend .button;
   padding: 1rem 1.5rem;
-  cursor: pointer;
   transition: all 0.3s ease;
 
   &:hover,

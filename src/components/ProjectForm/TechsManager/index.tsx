@@ -1,30 +1,46 @@
-import React, { useState } from 'react';
-import { 
-  Modal, 
-  Select, 
-  BadgesList 
+import React from 'react';
+import {
+  Modal,
+  Select,
+  BadgesList
 } from '../..';
-import { webTechs } from '../../../consts';
 import { AddIcon } from '../../../icons';
+import { Technologies } from '../../../models/types';
 import styles from './techs.module.scss';
+import useTechsManager from './useTechsManager';
+
+type fnTech = (tech: Technologies) => void;
 
 interface ITechManager {
-  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  techs: Technologies[];
+  add: fnTech;
+  remove: fnTech;
 }
 
-const TechsManager: React.FC<ITechManager> = (props): JSX.Element => {
-  const [modalState, setModalState] = useState<boolean>(false);
-  const changeModalState = (state: boolean) => setModalState(state);
+const TechsManager: React.FC<ITechManager> = ({
+  techs,
+  add,
+  remove,
+}): JSX.Element => {
+  const {
+    availableTechs,
+    currentTech,
+    modalState,
+    changeModalState,
+    handleOnChange
+  } = useTechsManager(techs);
 
   return (
     <>
       <div className={styles.selectContainer}>
         <Select
-          items={webTechs}
+          items={availableTechs}
           name="technologies"
-          {...props}
+          onChange={handleOnChange}
         />
-        <AddIcon />
+        <AddIcon
+          onClick={() => add(currentTech)}
+        />
       </div>
       <p
         className={styles.toggler}
@@ -42,7 +58,10 @@ const TechsManager: React.FC<ITechManager> = (props): JSX.Element => {
           >&times;</span>
         </div>
         <BadgesList
-          technologies={['CSS3', 'Bootstrap', 'Firebase', 'JavaScript']}
+          technologies={techs}
+          editable={true}
+          className={styles.modal__list}
+          remove={remove}
         />
       </Modal>
     </>

@@ -1,9 +1,28 @@
-.badge {
-  width: 32px;
-  height: 32px;
-  margin-right: 0.5rem;
+.badgeContainer {
+  position: relative;
+  display: inline-block;
+  margin-right: 1rem;
 
-  &:last-of-type {
-    margin-right: 0;
+  &:hover &__removeBtn,
+  &:focus &__removeBtn {
+    display: flex;
+  }
+
+  &__badge {
+    width: 32px;
+    height: 32px;
+    margin-right: 0.5rem;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &__removeBtn {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: -5px;
   }
 }

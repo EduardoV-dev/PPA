@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   FormControl,
   Input,
@@ -6,30 +6,40 @@ import {
   Label,
   Button
 } from '../..';
-import ImagesManager from '../ImagesManager';
+import ImagesManager from '../ImagesManager/Main';
+import TechsManager from '../TechsManager';
 import { IProject } from '../../../models/interfaces';
+import useForm from './useForm';
 import styles from './projectform.module.scss';
 import cn from 'classnames';
-import TechsManager from '../TechsManager';
 
 interface IProjectForm {
   initialState: IProject;
   className?: string;
 }
 
-type ChangeEvent = React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>;
+const tmpImages = [
+  'https://placekitten.com/150',
+  'https://placekitten.com/150',
+  'https://placekitten.com/150',
+  'https://placekitten.com/150',
+]
 
 const ProjectForm: React.FC<IProjectForm> = ({
   initialState,
   className,
 }): JSX.Element => {
-  const [input, setInput] = useState<IProject>(initialState);
-  const handleOnChange = ({ target: { name, value } }: ChangeEvent) =>
-    setInput({ ...input, [name]: value });
+  const {
+    input,
+    handleOnChange,
+    addTechtoList,
+    removeTechFromList,
+  } = useForm(initialState);
 
   const {
     name,
     description,
+    technologies,
     urlToProduction,
     urlToSourceCode,
   } = input;
@@ -64,7 +74,9 @@ const ProjectForm: React.FC<IProjectForm> = ({
           <FormControl>
             <Label htmlFor="technologies">Technologies</Label>
             <TechsManager
-              onChange={handleOnChange}
+              techs={technologies}
+              add={addTechtoList}
+              remove={removeTechFromList}
             />
           </FormControl>
           <FormControl>
@@ -90,7 +102,9 @@ const ProjectForm: React.FC<IProjectForm> = ({
         </div>
       </section>
       <section className={styles.form__lower}>
-        <ImagesManager />
+        <ImagesManager 
+          images={tmpImages}
+        />
       </section>
       <section className={styles.form__btns}>
         <Button

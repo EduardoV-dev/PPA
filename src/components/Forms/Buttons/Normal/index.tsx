@@ -21,9 +21,9 @@ const Button: React.FC<IButton> = ({
   href,
   style,
 }): JSX.Element => {
-  const classNames = cn(styles.button, className, {
-    [styles[`button-${color}`]]: color,
-    [styles[`button-${type}`]]: type,
+  const classNames = cn(styles.btn, className, {
+    [styles[`btn-${color}`]]: color,
+    [styles[`btn-${type}`]]: type,
   });
 
   return (

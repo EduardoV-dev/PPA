@@ -5,8 +5,8 @@ import cn from 'classnames';
 interface ISelect {
   name: string;
   items: string[];
-  className?: string;
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  className?: string;
   id?: string;
 }
 
@@ -18,11 +18,14 @@ const Select: React.FC<ISelect> = ({
   const classNames = cn(styles.select, className);
 
   return (
-    <select className={classNames} {...props}>
+    <select
+      className={classNames}
+      {...props}
+    >
       {items.map((item, idx) => (
         <option
           key={idx}
-          value={idx}
+          value={item}
         >{item}</option>
       ))}
     </select>
