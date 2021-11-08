@@ -11,7 +11,7 @@ const Remove: React.FC<IRemove> = ({
   className,
   ...props
 }): JSX.Element => {
-  const classNames = cn(styles.removeBtn, className);
+  const classNames = cn(styles.removeBtnBase, className);
 
   return ( 
     <button 

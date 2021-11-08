@@ -8,6 +8,7 @@ const useTechsManager = (techs: Technologies[]) => {
   const [modalState, setModalState] = useState<boolean>(false);
 
   const changeModalState = (state: boolean) => setModalState(state);
+  
   const handleOnChange = ({ target: { value } }: React.ChangeEvent<HTMLSelectElement>) =>
     setCurrentTech(value as Technologies);
 

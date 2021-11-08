@@ -4,6 +4,8 @@
   width: 90%;
   margin: 0 auto;
   position: relative;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
 
   &__upper {
     display: grid;
@@ -15,16 +17,13 @@
     margin-top: 1rem;
     display: grid;
     grid-template-columns: 10% 1fr;
-    align-items: center;
   }
 
   &__btns {
     display: flex;
     align-items: center;
-    margin-top: 2rem;
-    position: fixed;
-    bottom: 4%;
-    right: 2%;
+    justify-content: flex-end;
+    margin: 2rem 0;
 
     button[type=submit] {
       margin-left: 1rem;

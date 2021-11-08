@@ -2,6 +2,20 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, 48px);
   gap: 10px;
+}
+
+.imgContainer {
+  position: relative;
+  display: inline-block;
+
+  &:hover &__removeBtn,
+  &:focus &__removeBtn {
+    opacity: 1;
+  }
+
+  &__removeBtn {
+    opacity: 0;
+  }
 
   &__img {
     display: block;
@@ -9,5 +23,11 @@
     height: 48px;
     object-fit: cover;
     border-radius: 10px;
+    transition: all 0.3s ease;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+    }
   }
 }

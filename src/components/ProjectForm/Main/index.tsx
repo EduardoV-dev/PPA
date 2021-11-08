@@ -18,13 +18,6 @@ interface IProjectForm {
   className?: string;
 }
 
-const tmpImages = [
-  'https://placekitten.com/150',
-  'https://placekitten.com/150',
-  'https://placekitten.com/150',
-  'https://placekitten.com/150',
-]
-
 const ProjectForm: React.FC<IProjectForm> = ({
   initialState,
   className,
@@ -34,12 +27,15 @@ const ProjectForm: React.FC<IProjectForm> = ({
     handleOnChange,
     addTechtoList,
     removeTechFromList,
+    loadImagesToList,
+    removeImageFromList,
   } = useForm(initialState);
 
   const {
     name,
     description,
     technologies,
+    images,
     urlToProduction,
     urlToSourceCode,
   } = input;
@@ -102,8 +98,12 @@ const ProjectForm: React.FC<IProjectForm> = ({
         </div>
       </section>
       <section className={styles.form__lower}>
-        <ImagesManager 
-          images={tmpImages}
+        <ImagesManager
+          {...{
+            images,
+            loadImagesToList,
+            removeImageFromList,
+          }}
         />
       </section>
       <section className={styles.form__btns}>

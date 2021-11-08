@@ -1,11 +1,15 @@
 @import "/src/styles/theme";
 @import "/src/styles/components/button";
 
-.removeBtn {
+.removeBtnBase {
   @extend .button;
   width: 15px;
   height: 15px;
   background-color: getColor(white);
   color: getColor(dark);
   font-size: 1rem;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: -5px;
 }

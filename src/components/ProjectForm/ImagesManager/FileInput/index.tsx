@@ -2,7 +2,11 @@ import React from 'react';
 import { AddIcon } from '../../../../icons';
 import styles from './fileinput.module.scss';
 
-const FileInput: React.FC<{}> = (): JSX.Element => {
+interface IFileInput {
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const FileInput: React.FC<IFileInput> = (props): JSX.Element => {
 
   return (
     <div className={styles.container}>
@@ -12,7 +16,8 @@ const FileInput: React.FC<{}> = (): JSX.Element => {
         accept="image/*"
         className={styles.container__fileInput}
         name="images"
-        onChange={e => console.log(e.target.files && e.target.files[0])}
+        multiple
+        {...props}
       />
       <label
         htmlFor="file"
