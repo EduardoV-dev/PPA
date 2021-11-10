@@ -38,8 +38,8 @@ const Button: React.FC<IButton> = ({
         </a>
       ) : (
         <button
-        {...{ type, style }}
-        className={classNames}
+          {...{ type, style }}
+          className={classNames}
         >
           <span>{text}</span>
           {Icon && <Icon />}

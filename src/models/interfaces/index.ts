@@ -8,3 +8,12 @@ export interface IProject {
   urlToProduction: string;
   urlToSourceCode: string;
 }
+
+export interface IFormErrors {
+  nameError?: string;
+  descriptionError?: string;
+  imagesError?: string;
+  technologiesError?: string;
+  urlToProductionError?: string;
+  urlToSourceCodeError?: string;
+}

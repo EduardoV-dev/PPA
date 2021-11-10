@@ -4,7 +4,8 @@ import {
   Input,
   Textarea,
   Label,
-  Button
+  Button,
+  Error
 } from '../..';
 import ImagesManager from '../ImagesManager/Main';
 import TechsManager from '../TechsManager';
@@ -24,11 +25,13 @@ const ProjectForm: React.FC<IProjectForm> = ({
 }): JSX.Element => {
   const {
     input,
+    inputErrors,
     handleOnChange,
     addTechtoList,
     removeTechFromList,
     loadImagesToList,
     removeImageFromList,
+    onSubmit,
   } = useForm(initialState);
 
   const {
@@ -40,10 +43,24 @@ const ProjectForm: React.FC<IProjectForm> = ({
     urlToSourceCode,
   } = input;
 
+  const {
+    nameError,
+    descriptionError,
+    technologiesError,
+    imagesError,
+    urlToProductionError,
+    urlToSourceCodeError,
+  } = inputErrors;
+
   const classNames = cn(styles.form, className);
 
   return (
-    <form className={classNames}>
+    <form
+      className={classNames}
+      {... {
+        onSubmit,
+      }}
+    >
       <section className={styles.form__upper}>
         <div>
           <FormControl>
@@ -55,6 +72,7 @@ const ProjectForm: React.FC<IProjectForm> = ({
               type="text"
               value={name}
             />
+            {nameError && <Error>{nameError}</Error>}
           </FormControl>
           <FormControl>
             <Label htmlFor="description">Description</Label>
@@ -64,6 +82,7 @@ const ProjectForm: React.FC<IProjectForm> = ({
               placeholder="A great project..."
               value={description}
             />
+            {descriptionError && <Error>{descriptionError}</Error>}
           </FormControl>
         </div>
         <div>
@@ -74,6 +93,8 @@ const ProjectForm: React.FC<IProjectForm> = ({
               add={addTechtoList}
               remove={removeTechFromList}
             />
+
+            {technologiesError && <Error>{technologiesError}</Error>}
           </FormControl>
           <FormControl>
             <Label htmlFor="URLToproduction">URL To production</Label>
@@ -84,6 +105,7 @@ const ProjectForm: React.FC<IProjectForm> = ({
               type="url"
               value={urlToProduction}
             />
+            {urlToProductionError && <Error>{urlToProductionError}</Error>}
           </FormControl>
           <FormControl>
             <Label htmlFor="URLToSourceCode">URL To Source Code</Label>
@@ -94,6 +116,7 @@ const ProjectForm: React.FC<IProjectForm> = ({
               type="url"
               value={urlToSourceCode}
             />
+            {urlToSourceCodeError && <Error>{urlToSourceCodeError}</Error>}
           </FormControl>
         </div>
       </section>
@@ -105,6 +128,7 @@ const ProjectForm: React.FC<IProjectForm> = ({
             removeImageFromList,
           }}
         />
+        {imagesError && <Error>{imagesError}</Error>}
       </section>
       <section className={styles.form__btns}>
         <Button
@@ -118,7 +142,7 @@ const ProjectForm: React.FC<IProjectForm> = ({
           type="submit"
         />
       </section>
-    </form>
+    </form >
   );
 }
 

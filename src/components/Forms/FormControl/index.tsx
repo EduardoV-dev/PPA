@@ -3,7 +3,7 @@ import cn from 'classnames';
 import styles from './formcontrol.module.scss';
 
 interface IFormControl {
-  children: JSX.Element[];
+  children: JSX.Element[] | (JSX.Element | string | undefined)[];
   className?: string;
 }
 

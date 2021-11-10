@@ -6,6 +6,7 @@ interface ISelect {
   name: string;
   items: string[];
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  value: string;
   className?: string;
   id?: string;
 }

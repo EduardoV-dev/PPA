@@ -2,21 +2,25 @@ import React from 'react';
 import { RemoveButton } from '../../..';
 import FileInput from '../FileInput';
 import styles from './manager.module.scss';
+import cn from 'classnames';
 
 interface IImagesManager {
   images: string[];
   loadImagesToList: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  removeImageFromList: (URL: string) => void
+  removeImageFromList: (URL: string) => void;
+  className?: string;
 }
 
 const ImagesManager: React.FC<IImagesManager> = ({
   images,
   loadImagesToList,
   removeImageFromList,
+  className,
 }): JSX.Element => {
+  const classNames = cn(styles.container, className);
 
   return (
-    <>
+    <div className={classNames}>
       <FileInput
         onChange={loadImagesToList}
       />
@@ -38,7 +42,7 @@ const ImagesManager: React.FC<IImagesManager> = ({
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 

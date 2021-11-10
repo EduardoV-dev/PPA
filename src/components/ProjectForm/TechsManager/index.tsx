@@ -37,6 +37,7 @@ const TechsManager: React.FC<ITechManager> = ({
           items={availableTechs}
           name="technologies"
           onChange={handleOnChange}
+          value={currentTech}
         />
         <AddIcon
           onClick={() => add(currentTech)}

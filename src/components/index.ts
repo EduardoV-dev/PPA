@@ -9,6 +9,7 @@ export { default as Label } from './Forms/Label';
 export { default as Select } from './Forms/Select';
 export { default as Textarea } from './Forms/Textarea';
 export { default as FormControl } from './Forms/FormControl';
+export { default as Error } from './Forms/Error';
 export { default as ProjectItem } from './ProjectItem/Main';
 export { default as ProjectForm } from './ProjectForm/Main';
 export { default as Modal } from './Modal/Main';

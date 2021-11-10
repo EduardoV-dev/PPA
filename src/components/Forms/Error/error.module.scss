@@ -1,0 +1,7 @@
+@import '/src/styles/theme';
+
+.error {
+  font-size: 0.9rem;
+  color: getColor(red);
+  font-weight: 800;
+}
