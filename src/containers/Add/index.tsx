@@ -12,9 +12,12 @@ const Add: React.FC<{}> = (): JSX.Element => {
     urlToSourceCode: '',
   }
 
-  return ( 
-    <ProjectForm 
+  const submitEvent = (project: IProject) => { };
+
+  return (
+    <ProjectForm
       initialState={formInitialState}
+      submitEvent={submitEvent}
     />
   );
 }

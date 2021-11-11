@@ -9,6 +9,7 @@ import {
 } from '../..';
 import ImagesManager from '../ImagesManager/Main';
 import TechsManager from '../TechsManager';
+import { SubmitEvent } from '../../../models/types';
 import { IProject } from '../../../models/interfaces';
 import useForm from './useForm';
 import styles from './projectform.module.scss';
@@ -16,11 +17,13 @@ import cn from 'classnames';
 
 interface IProjectForm {
   initialState: IProject;
+  submitEvent: SubmitEvent;
   className?: string;
 }
 
 const ProjectForm: React.FC<IProjectForm> = ({
   initialState,
+  submitEvent,
   className,
 }): JSX.Element => {
   const {
@@ -32,7 +35,7 @@ const ProjectForm: React.FC<IProjectForm> = ({
     loadImagesToList,
     removeImageFromList,
     onSubmit,
-  } = useForm(initialState);
+  } = useForm(initialState, submitEvent);
 
   const {
     name,
@@ -57,6 +60,8 @@ const ProjectForm: React.FC<IProjectForm> = ({
   return (
     <form
       className={classNames}
+      noValidate
+      autoComplete="off"
       {... {
         onSubmit,
       }}

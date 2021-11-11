@@ -29,6 +29,13 @@ const Select: React.FC<ISelect> = ({
           value={item}
         >{item}</option>
       ))}
+      {items.length === 0 && (
+        <option
+          value={0}
+        >
+          Empty
+        </option>
+      )}
     </select>
   );
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { webTechs } from "../../../consts";
 import { Technologies } from "../../../models/types";
 
@@ -6,11 +6,14 @@ const useTechsManager = (techs: Technologies[]) => {
   const availableTechs = webTechs.filter(tech => !techs.includes(tech as Technologies));
   const [currentTech, setCurrentTech] = useState<Technologies>(availableTechs[0] as Technologies);
   const [modalState, setModalState] = useState<boolean>(false);
+  console.log(availableTechs, currentTech, availableTechs[0]);
 
   const changeModalState = (state: boolean) => setModalState(state);
 
   const handleOnChange = ({ target: { value } }: React.ChangeEvent<HTMLSelectElement>) =>
     setCurrentTech(value as Technologies);
+
+  useEffect(() => setCurrentTech(availableTechs[0] as Technologies), [availableTechs, setCurrentTech]);
 
   return {
     availableTechs,

@@ -19,7 +19,10 @@ const Input: React.FC<IInput> = ({
   const classNames = cn(styles.input, className);
 
   return (
-    <input {...props} className={classNames} />
+    <input
+      className={classNames}
+      {...props}
+    />
   );
 }
 
