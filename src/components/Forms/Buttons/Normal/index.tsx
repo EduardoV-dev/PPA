@@ -6,6 +6,7 @@ interface IButton {
   type: 'button' | 'submit' | 'link';
   color: 'primary' | 'secondary' | 'info' | 'warning';
   text: string;
+  onClick?: () => void;
   icon?: React.FC;
   className?: string;
   href?: string;
@@ -30,7 +31,11 @@ const Button: React.FC<IButton> = ({
     <>
       {type === 'link' ? (
         <a
-          {...{ href, style }}
+          {...{
+            href,
+            style,
+          }}
+          target="_blank"
           className={classNames}
         >
           <span>{text}</span>
@@ -38,7 +43,10 @@ const Button: React.FC<IButton> = ({
         </a>
       ) : (
         <button
-          {...{ type, style }}
+          {...{
+            type,
+            style,
+          }}
           className={classNames}
         >
           <span>{text}</span>

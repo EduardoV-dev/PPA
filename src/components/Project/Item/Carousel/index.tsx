@@ -2,18 +2,18 @@ import React from 'react';
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
-} from '../../../icons';
+} from '../../../../icons';
 import useCarousel from './useCarousel';
 import styles from './carousel.module.scss';
 import cn from 'classnames';
 
 interface ICarousel {
-  imagesURL: string[];
+  images: string[];
   className?: string;
 }
 
 const Carousel: React.FC<ICarousel> = ({
-  imagesURL,
+  images,
   className,
 }): JSX.Element => {
   const {
@@ -21,7 +21,7 @@ const Carousel: React.FC<ICarousel> = ({
     nextSlide,
     prevSlide,
     goToSlide,
-  } = useCarousel(imagesURL);
+  } = useCarousel(images);
   const carouselClassNames = cn(styles.carousel, className);
 
   return (
@@ -38,7 +38,7 @@ const Carousel: React.FC<ICarousel> = ({
       >
         <ChevronRightIcon />
       </button>
-      {imagesURL.map((url, idx) => (
+      {images.map((url, idx) => (
         <div
           key={idx}
           className={
@@ -55,7 +55,7 @@ const Carousel: React.FC<ICarousel> = ({
         </div>
       ))}
       <div className={styles.carousel__indicators_container}>
-        {imagesURL.map((url, idx) => (
+        {images.map((url, idx) => (
           <div
             key={url}
             className={`

@@ -1,7 +1,7 @@
 import isGithubURL from 'is-github-url';
 import {
   IFormErrors,
-  IProject,
+  IProjectForm,
 } from "../models/interfaces";
 import {
   isArrayEmpty,
@@ -10,7 +10,7 @@ import {
   trimFields,
 } from "../utils";
 
-export const checkData = (project: IProject) => {
+export const checkData = (project: IProjectForm) => {
   const errors: IFormErrors = {};
   const trimmedData = trimFields(project);
 
@@ -27,10 +27,8 @@ export const checkData = (project: IProject) => {
   if (isStringEmpty(description)) errors.descriptionError = 'Description can not be empty';
   if (isStringEmpty(urlToProduction)) errors.urlToProductionError = 'URL have not been defined';
   else if (!isURL(urlToProduction)) errors.urlToProductionError = 'URL is not valid';
-  else errors.urlToProductionError = '';
   if (isStringEmpty(urlToSourceCode)) errors.urlToSourceCodeError = 'URL have not been defined';
   else if (!isGithubURL(urlToSourceCode, { repository: true })) errors.urlToSourceCodeError = 'URL is not a Github repo';
-  else errors.urlToSourceCodeError = '';
   if (isArrayEmpty(images)) errors.imagesError = 'No images have been selected';
   if (isArrayEmpty(technologies)) errors.technologiesError = 'No technologies have been selected';
 

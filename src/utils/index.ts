@@ -1,15 +1,15 @@
-import { IProject } from "../models/interfaces";
+import { IProjectForm } from "../models/interfaces";
 
-const getURLFromImage = (image: File) =>
+export const getURLFromImage = (image: File) =>
   URL.createObjectURL(image);
 
-export const getNewImagesURL = (images: FileList) =>
-  Array.from(images).map(getURLFromImage);
+// export const getNewImagesURL = (images: File[] | FileList) =>
+//   Array.from(images).map(getURLFromImage);
 
 export const getImageObjectFromURL = (URL: string) =>
   fetch(URL).then(url => url.blob());
 
-export const trimFields = (project: IProject): IProject => ({
+export const trimFields = (project: IProjectForm): IProjectForm => ({
   ...project,
   name: project.name.trim(),
   description: project.description.trim(),

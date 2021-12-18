@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import { webTechs } from "../../../consts";
-import { IFormErrors, IProject } from "../../../models/interfaces";
-import { SubmitEvent, Technologies } from "../../../models/types";
-import { getNewImagesURL } from "../../../utils";
-import { checkData } from "../../../validations/project";
+import { webTechs } from "../../../../consts";
+import { IFormErrors, IProjectForm } from "../../../../models/interfaces";
+import { SubmitEvent, Technologies } from "../../../../models/types";
+import { checkData } from "../../../../validations/project";
 
 type ChangeEvent = React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>;
 
-const useForm = (initialState: IProject, submitEvent: SubmitEvent) => {
-  const [input, setInput] = useState<IProject>(initialState);
+const useForm = (initialState: IProjectForm, submitEvent: SubmitEvent) => {
+  const [input, setInput] = useState<IProjectForm>(initialState);
   const { technologies } = input;
   const [inputErrors, setInputErrors] = useState<IFormErrors>({});
 
@@ -26,12 +25,11 @@ const useForm = (initialState: IProject, submitEvent: SubmitEvent) => {
   // imagesManager Logic
   const loadImagesToList = ({ target: { files } }: React.ChangeEvent<HTMLInputElement>) => {
     if (!files) return;
-    const newImages = getNewImagesURL(files);
-    setInput({ ...input, images: [...input.images, ...newImages] });
+    setInput({ ...input, images: [...input.images, ...Array.from(files)] });
   }
 
-  const removeImageFromList = (URL: string) =>
-    setInput({ ...input, images: input.images.filter(url => url !== URL) });
+  const removeImageFromList = (fileName: string) =>
+    setInput({ ...input, images: input.images.filter(image => image.name !== fileName) });
 
   // OnSubmit logic
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {

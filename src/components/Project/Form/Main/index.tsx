@@ -6,11 +6,11 @@ import {
   Label,
   Button,
   Error
-} from '../..';
+} from '../../..';
 import ImagesManager from '../ImagesManager/Main';
 import TechsManager from '../TechsManager';
-import { SubmitEvent } from '../../../models/types';
-import { IProject } from '../../../models/interfaces';
+import { SubmitEvent } from '../../../../models/types';
+import { IProjectForm as IProject } from '../../../../models/interfaces';
 import useForm from './useForm';
 import styles from './projectform.module.scss';
 import cn from 'classnames';
@@ -136,11 +136,6 @@ const ProjectForm: React.FC<IProjectForm> = ({
         {imagesError && <Error>{imagesError}</Error>}
       </section>
       <section className={styles.form__btns}>
-        <Button
-          color="secondary"
-          text="Preview"
-          type="button"
-        />
         <Button
           color="primary"
           text="Save project"

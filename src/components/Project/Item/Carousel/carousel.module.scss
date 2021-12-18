@@ -82,10 +82,11 @@
 
   &__image {
     width: 100%;
+    height: auto;
     position: relative;
     border-radius: 10px;
-    max-height: 200px;
-    // height: auto;
+    min-height: 12.5rem;
+    max-height: 16rem;
     object-fit: cover;
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AddIcon } from '../../../../icons';
+import { AddIcon } from '../../../../../icons';
 import styles from './fileinput.module.scss';
 
 interface IFileInput {

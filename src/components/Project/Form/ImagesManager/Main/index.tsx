@@ -1,11 +1,13 @@
 import React from 'react';
-import { RemoveButton } from '../../..';
 import FileInput from '../FileInput';
+import { RemoveButton } from '../../../..';
+import { getURLFromImage } from '../../../../../utils';
+import { animated, useTransition } from 'react-spring';
 import styles from './manager.module.scss';
 import cn from 'classnames';
 
 interface IImagesManager {
-  images: string[];
+  images: File[];
   loadImagesToList: (e: React.ChangeEvent<HTMLInputElement>) => void;
   removeImageFromList: (URL: string) => void;
   className?: string;
@@ -18,6 +20,12 @@ const ImagesManager: React.FC<IImagesManager> = ({
   className,
 }): JSX.Element => {
   const classNames = cn(styles.container, className);
+  const transitions = useTransition(images, {
+    from: { y: -50, opacity: 0 },
+    enter: { y: 0, opacity: 1 },
+    leave: { y: 50, opacity: 0 },
+    config: { duration: 200 }
+  });
 
   return (
     <div className={classNames}>
@@ -25,21 +33,21 @@ const ImagesManager: React.FC<IImagesManager> = ({
         onChange={loadImagesToList}
       />
       <div className={styles.list}>
-        {images.map(image => (
-          <div
-            key={image}
+        {transitions((props, item: File, transition, idx) => (
+          <animated.div
+            style={props}
             className={styles.imgContainer}
           >
             <img
               className={styles.imgContainer__img}
-              src={image}
-              alt=""
+              src={getURLFromImage(item)}
+              alt={item.name}
             />
             <RemoveButton
               className={styles.imgContainer__removeBtn}
-              onClick={() => removeImageFromList(image)}
+              onClick={() => removeImageFromList(images[idx].name)}
             />
-          </div>
+          </animated.div>
         ))}
       </div>
     </div>

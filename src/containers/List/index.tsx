@@ -1,15 +1,9 @@
 import React from 'react';
-import { ProjectItem } from '../../components';
-import styles from './list.module.scss';
+import { ProjectList } from '../../components';
 
-const List: React.FC<{}> = (): JSX.Element => {
-  return (
-    <div className={styles.container}>
-      <ProjectItem />
-      <ProjectItem />
-      <ProjectItem />
-    </div>
-  );
-}
+const List: React.FC<{}> = (): JSX.Element => (
+  <ProjectList />
+);
+
 
 export default List;

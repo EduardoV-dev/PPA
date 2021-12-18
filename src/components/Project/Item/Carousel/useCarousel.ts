@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const useCarousel = (imagesURL: string[]) => {
+const useCarousel = (imagesURL: string[] | File[]) => {
   const [current, setCurrent] = useState<number>(0);
   const slides = imagesURL.length;
   

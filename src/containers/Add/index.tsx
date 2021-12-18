@@ -1,9 +1,10 @@
 import React from 'react';
 import { ProjectForm } from '../../components';
-import { IProject } from '../../models/interfaces';
+import { IProjectForm } from '../../models/interfaces';
+import { addProject } from '../../services/api';
 
 const Add: React.FC<{}> = (): JSX.Element => {
-  const formInitialState: IProject = {
+  const formInitialState: IProjectForm = {
     name: '',
     description: '',
     images: [],
@@ -12,12 +13,10 @@ const Add: React.FC<{}> = (): JSX.Element => {
     urlToSourceCode: '',
   }
 
-  const submitEvent = (project: IProject) => { };
-
   return (
     <ProjectForm
       initialState={formInitialState}
-      submitEvent={submitEvent}
+      submitEvent={addProject}
     />
   );
 }

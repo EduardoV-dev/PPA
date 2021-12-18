@@ -3,9 +3,9 @@ import {
   Modal,
   Select,
   BadgesList
-} from '../..';
-import { AddIcon } from '../../../icons';
-import { Technologies } from '../../../models/types';
+} from '../../..';
+import { AddIcon } from '../../../../icons';
+import { Technologies } from '../../../../models/types';
 import styles from './techs.module.scss';
 import useTechsManager from './useTechsManager';
 
