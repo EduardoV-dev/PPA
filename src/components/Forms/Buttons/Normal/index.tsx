@@ -16,11 +16,10 @@ interface IButton {
 const Button: React.FC<IButton> = ({
   type,
   color,
+  className,
   icon: Icon,
   text,
-  className,
-  href,
-  style,
+  ...rest
 }): JSX.Element => {
   const classNames = cn(styles.btn, className, {
     [styles[`btn-${color}`]]: color,
@@ -31,10 +30,7 @@ const Button: React.FC<IButton> = ({
     <>
       {type === 'link' ? (
         <a
-          {...{
-            href,
-            style,
-          }}
+          {...rest}
           target="_blank"
           className={classNames}
         >
@@ -45,7 +41,7 @@ const Button: React.FC<IButton> = ({
         <button
           {...{
             type,
-            style,
+            ...rest
           }}
           className={classNames}
         >

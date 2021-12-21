@@ -1,4 +1,4 @@
-import { collection, addDoc, onSnapshot, doc } from "@firebase/firestore";
+import { collection, addDoc, doc, deleteDoc } from "@firebase/firestore";
 import { getDownloadURL, ref, uploadBytesResumable } from "@firebase/storage";
 import { IProjectForm } from "../../models/interfaces";
 import { db, storage } from "../firebase";
@@ -10,7 +10,7 @@ const uploadImage = (image: File) =>
 
     uploadTask.on(
       'state_changed',
-      (snapshot) => { },
+      () => { },
       (err) => rej(err),
       () => getDownloadURL(uploadTask.snapshot.ref)
         .then(url => res(url))
@@ -38,23 +38,12 @@ export const addProject = async (project: IProjectForm) => {
   await addDoc(collection(db, 'projects'), projectToUpload).catch(console.log);
 }
 
-export const editProject = (project: IProjectForm, id: string) => {
+// export const editProject = (project: IProjectForm, id: string) => {
 
+// }
+
+export const removeProject = async (id: string) => {
+  const docRef = doc(db, 'projects', id);
+  await deleteDoc(docRef).catch(console.log);  
 }
-
-export const removeProject = (id: string) => {
-
-}
-
-export const getProjects = () => {
-  try {
-    onSnapshot(doc(db, 'projects'), snapshot => {
-      const projects = snapshot.data();
-      console.log(projects)
-      // res(projects);
-    });
-  } catch (e) {
-    console.log(e);
-    
-  }
-}
+  

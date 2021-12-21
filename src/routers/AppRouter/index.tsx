@@ -1,24 +1,24 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
-  Switch,
+  BrowserRouter,
+  Routes,
   Route,
-  Redirect,
+  Navigate,
 } from 'react-router-dom';
 import { Layout } from '../../components';
 import { Add, List } from '../../containers';
 
 const AppRouter: React.FC<{}> = (): JSX.Element => {
   return (
-    <Router>
+    <BrowserRouter>
       <Layout>
-        <Switch>
-          <Route path="/list" exact children={List} />
-          <Route path="/add" exact children={Add} />
-          <Redirect to="/list" />
-        </Switch>
+        <Routes>
+          <Route path="/list" element={<List />} />
+          <Route path="/add" element={<Add />} />
+          <Route path="/*" element={<Navigate to="/list" />} />
+        </Routes>
       </Layout>
-    </Router>
+    </BrowserRouter>
   );
 }
 

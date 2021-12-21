@@ -17,12 +17,15 @@ const ProjectList: React.FC<{}> = (): JSX.Element => {
 
   return (
     <div className={styles.container}>
-      {projects.length && projects.map((project: IProjectItem) => (
-        <ProjectItem
-          key={project.id}
-          project={project}
-        />
-      ))}
+      {projects.length
+        ? projects.map((project: IProjectItem) => (
+          <ProjectItem
+            key={project.id}
+            project={project}
+          />
+        ))
+        : <p className={styles.container__message}>No projects to show</p>
+      }
     </div>
   );
 }

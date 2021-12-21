@@ -4,7 +4,6 @@ import {
   ChevronRightIcon,
   CodeOpenIcon,
   DeleteIcon,
-  EditIcon,
   InfoIcon
 } from '../../../../icons';
 import {
@@ -15,10 +14,13 @@ import {
 import Carousel from '../Carousel';
 import styles from './item.module.scss';
 import cn from 'classnames';
+import { removeProject } from '../../../../services/api';
 
 interface IItem {
   project: IProjectItem;
   className?: string;
+  edit?: (id: string) => void;
+  remove?: () => void;
 }
 
 const Item: React.FC<IItem> = ({
@@ -26,6 +28,7 @@ const Item: React.FC<IItem> = ({
   className,
 }): JSX.Element => {
   const {
+    id,
     name,
     description,
     images,
@@ -33,8 +36,6 @@ const Item: React.FC<IItem> = ({
     urlToProduction,
     urlToSourceCode,
   } = project;
-
-  console.log(`Proyecto: `, project);
   
   const itemClassNames = cn(styles.item, className);
 
@@ -74,17 +75,18 @@ const Item: React.FC<IItem> = ({
           <InfoIcon className={styles.item__infoBtn} />
         </div>
         <div className={styles.item__btnsGroup}>
-          <Button
+          {/* <Button
             color="info"
             text="Edit"
             type="button"
             icon={EditIcon}
-          />
+          /> */}
           <Button
             color="warning"
             text="Delete"
             type="button"
             icon={DeleteIcon}
+            onClick={() => removeProject(id)}
           />
         </div>
       </div>

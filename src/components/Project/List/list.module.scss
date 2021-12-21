@@ -1,3 +1,5 @@
+@import '/src/styles/theme';
+
 .container {
   width: 100%;
   display: grid;
@@ -5,4 +7,10 @@
   align-items: center;
   gap: 20px;
   padding: 1rem 0;
+
+  &__message {
+    font-size: 2rem;
+    color: getColor(white);
+    font-weight: 800;
+  }
 }

@@ -20,6 +20,7 @@ const createWindow = () => {
     webPreferences: { nodeIntegration: true },
   });
   windowProps.manage(mainWindow);
+  mainWindow.removeMenu();
   mainWindow.loadURL(
     isDev
       ? 'http://localhost:3000'
